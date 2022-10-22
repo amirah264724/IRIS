@@ -1,5 +1,5 @@
 import seaborn as sns
+iris = sns.load_dataset('iris')
 sns.boxplot(data=iris)
 
-iris = sns.load_dataset('iris') 
-import pandas as pd 
+ import pandas as pd 

@@ -31,7 +31,7 @@ from sklearn.svm import SVC
 svm = SVC(random_state=42, kernel='linear')
 
 # Fit the data to the SVM classifier
-svm = svm.fit(xtrain, ytrain)
+svm = svm.fit(Xtrain, ytrain)
 
 # Evaluate by means of a confusion matrix
 matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')

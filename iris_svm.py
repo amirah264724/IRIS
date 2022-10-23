@@ -34,7 +34,7 @@ svm = SVC(random_state=42, kernel='linear')
 svm = svm.fit(Xtrain, ytrain)
 
 # Evaluate by means of a confusion matrix
-matrix = plot_confusion_matrix(svm, xtest, ytest, cmap=plt.cm.Blues, normalize='true')
+matrix = plot_confusion_matrix(svm, Xtest, ytest, cmap=plt.cm.Blues, normalize='true')
 plt.title('Confusion matrix for linear SVM')
 plt.show(matrix)
 plt.show()

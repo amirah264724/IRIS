@@ -38,4 +38,3 @@ matrix = plot_confusion_matrix(svm, Xtest, ytest, cmap=plt.cm.Blues, normalize='
 plt.title('Confusion matrix for linear SVM')
 fig = plt.figure(figsize=(10, 4))
 plt.show(matrix)
-plt.show()

@@ -1,7 +1,11 @@
+import streamlit as st
+from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import classification_report
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
+
 iris=sns.load_dataset('iris')
 iris.head()
 

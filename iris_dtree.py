@@ -5,6 +5,10 @@ import matplotlib as plt
 import pandas as pd
 iris=pd.read_csv('iris.data')
 iris.head()
+
+X_iris = iris.drop('species', axis=1)  
+y_iris = iris['species']
+
 from sklearn import tree
 from sklearn.tree import plot_tree
 

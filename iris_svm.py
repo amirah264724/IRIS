@@ -14,10 +14,10 @@ from sklearn.model_selection import train_test_split
 Xtrain, Xtest, ytrain, ytest = train_test_split(X_iris, y_iris, random_state = 0)
 clf = SVC(kernel='rbf', C=1).fit(Xtrain, ytrain)
 
-print('Iris dataset')
-print('Accuracy of RBF SVC classifier on training set: {:.2f}'
+st.write('Iris dataset')
+st.write('Accuracy of RBF SVC classifier on training set: {:.2f}'
      .format(clf.score(Xtrain, ytrain)))
-print('Accuracy of RBF SVC classifier on test set: {:.2f}'
+st.write('Accuracy of RBF SVC classifier on test set: {:.2f}'
      .format(clf.score(Xtest, ytest)))
 
 #Confusion matrix SVM:
@@ -32,5 +32,4 @@ svm = svm.fit(Xtrain, ytrain)
 matrix = plot_confusion_matrix(svm, Xtest, ytest, cmap=plt.cm.Blues, normalize='true')
 plt.title('Confusion matrix for linear SVM')
 fig = plt.figure(figsize=(10, 4))
-plt.show(matrix)
-plt.show()
+st.pyplot(fig)

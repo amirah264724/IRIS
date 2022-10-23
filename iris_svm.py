@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib as plt
 import pandas as pd
-iris=pd.read_csv('/content/iris.data')
+iris=pd.read_csv('iris.data')
 iris.head()
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split

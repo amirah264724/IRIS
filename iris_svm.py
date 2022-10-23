@@ -9,21 +9,17 @@ iris.head()
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
 
-from sklearn import tree
-from sklearn.tree import plot_tree
+from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 
-Xtrain, Xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=0)
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(Xtrain, ytrain)
+Xtrain, Xtest, ytrain, ytest = train_test_split(X_iris, y_iris, random_state = 0)
+clf = SVC(kernel='rbf', C=1).fit(Xtrain, ytrain)
 
-
-
-clf.fit(Xtrain, ytrain)
-
-tree.plot_tree(clf.fit(Xtrain, ytrain) )
-
-clf.score(Xtest, ytest)
+print('Iris dataset')
+print('Accuracy of RBF SVC classifier on training set: {:.2f}'
+     .format(clf.score(Xtrain, ytrain)))
+print('Accuracy of RBF SVC classifier on test set: {:.2f}'
+     .format(clf.score(Xtest, ytest)))
 
 #Confusion matrix SVM:
 from sklearn.metrics import plot_confusion_matrix

@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib as plt
 import pandas as pd
-iris=pd.read_csv('iris.data')
+iris=sns.load_dataset('iris')
 iris.head()
 
 X_iris = iris.drop('species', axis=1)  

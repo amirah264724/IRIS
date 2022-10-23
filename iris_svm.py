@@ -36,5 +36,5 @@ svm = svm.fit(Xtrain, ytrain)
 fig = plt.figure(figsize=(10, 4))
 # Evaluate by means of a confusion matrix
 matrix = plot_confusion_matrix(svm, Xtest, ytest, cmap=plt.cm.Blues, normalize='true')
-plt.title('Confusion matrix for linear SVM')
-plt.show(fig)
+st.title('Confusion matrix for linear SVM')
+st.pyplot(fig)

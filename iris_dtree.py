@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib as plt
 import pandas as pd
-iris=pd.read_csv('/content/iris.data')
+iris=pd.read_csv('iris.data')
 iris.head()
 from sklearn import tree
 from sklearn.tree import plot_tree

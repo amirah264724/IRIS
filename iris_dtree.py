@@ -13,7 +13,7 @@ from sklearn.tree import plot_tree
 from sklearn.model_selection import train_test_split
 
 xtrain, xtest, ytrain, ytest = train_test_split(x_iris, y_iris,random_state=1)
-clf.fit(xtrain, ytrain)
+#clf.fit(xtrain, ytrain)
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(xtrain, ytrain)
 

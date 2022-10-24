@@ -17,10 +17,9 @@ Xtrain, Xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(Xtrain, ytrain)
 
-
-
 clf.fit(Xtrain, ytrain)
 
-tree.plot_tree(clf.fit(Xtrain, ytrain) )
+a=tree.plot_tree(clf.fit(Xtrain, ytrain) )
+st.write(a)
 
 clf.score(Xtest, ytest)

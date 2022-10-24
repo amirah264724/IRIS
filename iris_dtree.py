@@ -9,7 +9,6 @@ from sklearn.tree import plot_tree
 from sklearn.model_selection import train_test_split
 
 iris=sns.load_dataset('iris')
-st.write('iris')
 
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']

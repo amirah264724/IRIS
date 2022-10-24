@@ -17,7 +17,7 @@ xtrain, xtest, ytrain, ytest = train_test_split(x_iris, y_iris,random_state=1)
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(xtrain, ytrain)
 
-fig=ply.figure(figsize=(10,4))
+fig=plt.figure(figsize=(10,4))
 
 
 

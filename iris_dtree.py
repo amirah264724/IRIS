@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib as plt
 import pandas as pd
 from sklearn.datasets import load_iris
-
+iris=sns.load_dataset('iris')
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
 

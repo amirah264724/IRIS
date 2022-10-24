@@ -5,6 +5,11 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix 
+from sklearn import metrics
 
 iris=sns.load_dataset('iris')
 iris.head()
@@ -12,28 +17,32 @@ iris.head()
 X_iris = iris.drop('species', axis=1)  
 y_iris = iris['species']
 
-from sklearn.svm import SVC
-from sklearn.model_selection import train_test_split
-
 Xtrain, Xtest, ytrain, ytest = train_test_split(X_iris, y_iris, random_state = 0)
-clf = SVC(kernel='rbf', C=1).fit(Xtrain, ytrain)
 
+clf = SVC(kernel='rbf', C=1).fit(Xtrain, ytrain)
 st.write('Iris dataset')
 st.write('Accuracy of RBF SVC classifier on training set: {:.2f}'
      .format(clf.score(Xtrain, ytrain)))
 st.write('Accuracy of RBF SVC classifier on test set: {:.2f}'
      .format(clf.score(Xtest, ytest)))
 
-#Confusion matrix SVM:
-from sklearn.metrics import plot_confusion_matrix
-from sklearn.svm import SVC
-svm = SVC(random_state=42, kernel='linear')
+#Confusion matrix SVM:   
+model = SVC()                       
+model.fit(Xtrain, ytrain) 
+ymodel = model.predict(Xtest)
 
-# Fit the data to the SVM classifier
-svm = svm.fit(Xtrain, ytrain)
+a = accuracy_score(ytest, ymodel) 
+st.write("Accuracy score:", a)
+
+report = classification_report(ytest, ymodel)
+st.write(report)
+
+confusion_matrix(ytest, ymodel)
 
 # Evaluate by means of a confusion matrix
-matrix = plot_confusion_matrix(svm, Xtest, ytest, cmap=plt.cm.Blues, normalize='true')
-plt.title('Confusion matrix for linear SVM')
-fig = plt.figure(figsize=(10, 4))
+confusion_matrix = metrics.confusion_matrix(ytest, ymodel)
+cm = confusion_matrix
+st.write(cm)
+fig = plt.figure(figsize=(8, 4))
+sns.heatmap(cm, annot=True)
 st.pyplot(fig)

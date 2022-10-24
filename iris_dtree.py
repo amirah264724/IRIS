@@ -15,8 +15,6 @@ clf = clf.fit(Xtrain, ytrain)
 
 clf.fit(Xtrain, ytrain)
 
-fig = plt.figure(fig.size=(10,4))
-
 tree.plot_tree(clf.fit(Xtrain, ytrain) )
 st.pyplot(fig)
 clf.score(Xtest, ytest)

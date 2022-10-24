@@ -11,8 +11,9 @@ y_iris = iris['species']
 from sklearn import tree
 from sklearn.tree import plot_tree
 from sklearn.model_selection import train_test_split
-clf.fit(Xtrain, ytrain)
+
 Xtrain, Xtest, ytrain, ytest = train_test_split(X_iris, y_iris,random_state=1)
+clf.fit(Xtrain, ytrain)
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(Xtrain, ytrain)
 

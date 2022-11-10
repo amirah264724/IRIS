@@ -1,5 +1,4 @@
 import streamlit as st
-import sklearn
 from sklearn.metrics import plot_confusion_matrix
 from sklearn.metrics import classification_report
 import numpy as np
